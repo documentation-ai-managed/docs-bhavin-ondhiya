@@ -1,0 +1,126 @@
+---
+title: Welcome to Bhavin Ondhiya
+description: An overview of Bhavin Ondhiya, the default documentation space for organizing and managing project documentation, including key features and navigation.
+---
+
+## Overview
+
+Bhavin Ondhiya provides a centralized space for your project documentation. You can organize pages, collaborate with teams, and publish polished docs with ease. This platform handles everything from simple READMEs to comprehensive API references.
+
+Use the sidebar navigation to explore topics. Start with the [quickstart guide](/quickstart) to set up your first space.
+
+<Callout kind="info">
+  Bhavin Ondhiya uses brand color `#3B82F6` for primary elements. Apply it consistently in your custom themes.
+</Callout>
+
+## Key Features
+
+Discover the core capabilities that make Bhavin Ondhiya your go-to documentation solution.
+
+<Columns cols={3}>
+  <Card title="Organized Spaces" icon="folder" href="#spaces">
+    Group related docs into spaces. Manage permissions and workflows per space.
+  </Card>
+  <Card title="Rich Editing" icon="edit-3" href="#editing">
+    Write in Markdown or MDX. Embed components like tabs and cards for interactive docs.
+  </Card>
+  <Card title="Collaboration" icon="users" href="#collaboration">
+    Invite team members. Track changes and review edits in real time.
+  </Card>
+</Columns>
+
+## Brand Guidelines
+
+Follow these guidelines to maintain consistency across your documentation.
+
+- **Primary Color:** `#3B82F6` – Use for buttons, links, and accents.
+- **Typography:** Sans-serif fonts with clear hierarchy (H2 for sections, H3 for subsections).
+- **Icons:** Lucide library – Select from `book-open`, `code`, `zap`, and others.
+
+<Expandable title="Advanced Theming" default-open="false">
+
+Customize further with CSS variables:
+
+````css
+:root {
+  --brand-primary: #3B82F6;
+  --brand-secondary: #1E40AF;
+}
+````
+
+Apply in your space settings.
+
+</Expandable>
+
+## Quick Start Guide
+
+Get your documentation live in minutes.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+
+  Visit [https://bhavinondhiya.com](https://bhavinondhiya.com) and sign up with your email.
+
+  </Step>
+  <Step title="New Space" icon="plus">
+
+  Click "New Space" in the dashboard. Name it "My Project Docs".
+
+  </Step>
+  <Step title="Add Page" icon="file-plus">
+
+  Create your first page. Use Markdown for content:
+
+  ````markdown
+  # My Project
+  Welcome to the docs.
+  ````
+
+  </Step>
+  <Step title="Publish" icon="globe">
+
+  Hit "Publish". Share the live URL: `https://docs.bhavinondhiya.com/my-project`.
+
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="Embed API Docs" icon="code">
+    <CodeGroup tabs="JavaScript,Python">
+    ````javascript
+    fetch('https://api.example.com/docs', {
+      headers: { Authorization: 'Bearer YOUR_API_KEY' }
+    })
+    .then(res => res.json())
+    .then(data => console.log(data));
+    ````
+    ````python
+    import requests
+    response = requests.get(
+      'https://api.example.com/docs',
+      headers={'Authorization': 'Bearer YOUR_API_KEY'}
+    )
+    print(response.json())
+    ````
+    </CodeGroup>
+  </Tab>
+  <Tab title="Custom Components" icon="puzzle">
+    Add interactive elements like this request example:
+
+    <Request tabs="cURL,JavaScript">
+    ````bash
+    curl -X GET https://api.example.com/v1/users \
+      -H "Authorization: Bearer YOUR_API_KEY"
+    ````
+    ````javascript
+    const response = await fetch('https://api.example.com/v1/users', {
+      headers: { Authorization: 'Bearer YOUR_API_KEY' }
+    });
+    ````
+    </Request>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Explore more in the [quickstart](/quickstart), [authentication](/authentication), or [changelog](/changelog) pages. Customize your space next!
+</Callout>

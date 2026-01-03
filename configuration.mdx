@@ -1,0 +1,153 @@
+---
+title: Managing Your Documentation Space
+description: Customize and configure your Bhavin Ondhiya space to fit your project's needs, including themes and permissions.
+---
+
+## Overview
+
+Configure your Bhavin Ondhiya documentation space to match your project's branding and team structure. Access settings from the space dashboard at `https://dashboard.example.com/spaces/your-space/settings`. You control space settings, user permissions, themes, and backups directly from this interface.
+
+<Callout kind="info">
+  Save changes immediately after updates. Most configurations apply in `<30s`.
+</Callout>
+
+## Quick Access
+
+<Columns cols={2}>
+  <Card title="Space Settings" icon="settings" href="#space-settings">
+    Manage visibility and storage limits.
+  </Card>
+  <Card title="User Permissions" icon="users" href="#user-permissions">
+    Control who edits and views docs.
+  </Card>
+  <Card title="Theme and Branding" icon="palette" href="#theme-and-branding">
+    Customize colors and logos.
+  </Card>
+  <Card title="Export and Backup" icon="download" href="#export-and-backup">
+    Secure your content.
+  </Card>
+</Columns>
+
+## Space Settings
+
+Adjust general space properties like name, description, and storage.
+
+<Steps>
+  <Step title="Navigate to Settings" icon="navigation">
+    Click the gear icon in your space header.
+  </Step>
+  <Step title="Update Basics">
+    Enter a new space name and description.
+  </Step>
+  <Step title="Set Limits">
+    Configure max pages (`<1000`) and storage (`<10GB`).
+  </Step>
+</Steps>
+
+<ParamField path="space.name" param-type="string" required="true">
+  Your space display name, max `50` characters.
+</ParamField>
+
+<ParamField path="space.storageLimit" param-type="number" required="false">
+  Maximum storage in GB. Default: `5`.
+</ParamField>
+
+## User Permissions
+
+Define roles for team members. Use the permissions panel to assign access.
+
+<Tabs>
+  <Tab title="Admin" icon="shield">
+    Full control: edit, delete, manage users.
+  </Tab>
+  <Tab title="Editor" icon="edit">
+    Create and update pages, no user management.
+  </Tab>
+  <Tab title="Viewer" icon="eye">
+    Read-only access.
+  </Tab>
+</Tabs>
+
+| Role    | Edit Pages | Manage Users | Delete Content |
+|---------|------------|--------------|----------------|
+| Admin   | Yes        | Yes          | Yes            |
+| Editor  | Yes        | No           | No             |
+| Viewer  | No         | No           | No             |
+
+<Callout kind="alert">
+  Revoke permissions for former team members immediately to protect content.
+</Callout>
+
+## Theme and Branding
+
+Apply your brand with custom colors and logos. Use the brand color `#3B82F6` for primary elements.
+
+<CodeGroup tabs="JSON,CSS">
+  ```json
+  {
+    "primaryColor": "#3B82F6",
+    "logoUrl": "https://your-logo.example.com/logo.png",
+    "fontFamily": "Inter, sans-serif"
+  }
+  ```
+  ```css
+  :root {
+    --primary: #3B82F6;
+    --logo: url('https://your-logo.example.com/logo.png');
+  }
+  ```
+</CodeGroup>
+
+<Steps>
+  <Step title="Upload Logo" icon="upload">
+    Drag your logo (`<2MB`, PNG/SVG) to the theme editor.
+  </Step>
+  <Step title="Set Colors">
+    Enter hex codes like `#3B82F6` for primary and secondary.
+  </Step>
+  <Step title="Preview and Save">
+    View live preview, then publish.
+  </Step>
+</Steps>
+
+## Export and Backup
+
+Protect your documentation with regular exports.
+
+<Expandable title="Automated Backups" default-open="true">
+  Enable daily backups to `https://backup.example.com`. Configure via API:
+
+  ```bash
+  curl -X POST https://api.example.com/v1/spaces/your-space/backup \
+    -H "Authorization: Bearer YOUR_TOKEN" \
+    -d '{"frequency": "daily", "storageUrl": "s3://your-bucket/backups"}'
+  ```
+</Expandable>
+
+<Expandable title="Manual Export" default-open="false">
+  Export as Markdown or PDF:
+
+  1. Go to Export tab.
+  2. Select format.
+  3. Download ZIP.
+</Expandable>
+
+## Troubleshooting
+
+<ExpandableGroup>
+  <Expandable title="Theme Not Applying">
+    Clear browser cache or check for CSS conflicts. Verify hex codes like `#3B82F6`.
+  </Expandable>
+  <Expandable title="Permission Errors">
+    Ensure your role allows the action. Admins can override via space settings.
+  </Expandable>
+</ExpandableGroup>
+
+<Columns cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Set up your first space.
+  </Card>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure user access.
+  </Card>
+</Columns>

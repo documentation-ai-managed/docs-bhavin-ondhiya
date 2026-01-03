@@ -1,0 +1,141 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements in Bhavin Ondhiya.
+---
+
+## Overview
+
+Bhavin Ondhiya keeps you up to date with regular releases that introduce new features, performance improvements, and bug fixes. Check this page frequently to see what's new and plan your upgrades.
+
+<Callout kind="info">
+  Subscribe to our RSS feed or GitHub notifications to get instant updates on new releases.
+</Callout>
+
+## Recent Releases
+
+Here are the latest version releases, ordered newest first. Each release includes detailed changelogs with migration guides when needed.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Added real-time collaboration for shared documentation spaces
+- Introduced custom themes with your brand color `{`#3B82F6`}` support
+- New search indexing for faster navigation across projects
+
+## Improvements
+
+- Enhanced MDX rendering performance by 40%
+- Better mobile responsiveness for documentation previews
+
+## Bug Fixes
+
+- Fixed parsing errors with nested JSX components
+- Resolved special character escaping issues in prose
+
+To upgrade:
+
+````bash
+npm update bhavin-ondhiya
+````
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Project organization with folders and tags
+- Integrated changelog generator using `<Update>` components
+- API for programmatic documentation management
+
+## Improvements
+
+- Optimized YAML frontmatter parsing
+- Added syntax highlighting for 20+ languages
+
+<CodeGroup tabs="JavaScript,Python">
+````javascript
+// New API usage
+import { BhavinOndhiya } from 'bhavin-ondhiya';
+const docs = new BhavinOndhiya({ apiKey: 'YOUR_API_KEY' });
+await docs.createPage('changelog.mdx');
+````
+````python
+# New API usage
+from bhavin_ondhiya import BhavinOndhiya
+docs = BhavinOndhiya(api_key="YOUR_API_KEY")
+docs.create_page("changelog.mdx")
+````
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## New Features
+
+- Full MDX documentation builder with 15+ components
+- Drag-and-drop page organization
+- Export to static sites or GitHub Pages
+
+## Breaking Changes
+
+- Updated component syntax to require double-quoted attributes
+- Removed legacy `<Mermaid>` component; use code blocks instead
+
+## Migration Steps
+
+<Steps>
+  <Step title="Update Dependencies" icon="download">
+
+````bash
+npm install bhavin-ondhiya@latest
+````
+
+  </Step>
+  <Step title="Refactor Components" icon="settings">
+    Replace single quotes with double quotes in all JSX attributes.
+  </Step>
+  <Step title="Test Parsing" icon="check-circle">
+    Validate your MDX files for errors.
+  </Step>
+</Steps>
+
+</Update>
+
+## Quick Links
+
+<Columns cols={3}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Get started in minutes.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your docs space.
+  </Card>
+  <Card title="Guides" icon="book-open" href="/guides">
+    In-depth tutorials.
+  </Card>
+</Columns>
+
+## Upcoming Changes
+
+<Expandable title="Planned for v1.3.0" default-open="false">
+
+- AI-powered content suggestions
+- Version control integration with Git
+- Advanced analytics for doc usage
+
+Watch this space for beta releases.
+
+</Expandable>
+
+| Version | Date       | Key Changes                  |
+|---------|------------|------------------------------|
+| v1.2.0  | 2024-10-15 | Collaboration, themes        |
+| v1.1.0  | 2024-09-20 | Project org, API             |
+| v1.0.0  | 2024-08-10 | MDX builder, exports         |
+
+<Callout kind="tip">
+  Found a bug? [Submit an issue](https://github.com/bhavin-ondhiya/docs/issues) on GitHub.
+</Callout>
